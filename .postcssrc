@@ -1,0 +1,30 @@
+{
+  "plugins": {
+    "postcss-font-magician": {
+      variants: {
+        'Roboto': {
+          '100': [],
+          '300': [],
+          '400': [],
+          '500': [],
+          '700': [],
+          '900': []
+        },
+        'RobotoSlab': {
+          '100': [],
+          '400': []
+        }
+      },
+      foundries: ['google']
+    },
+    "postcss-property-lookup": {},
+    "postcss-flexbugs-fixes": {},
+    "autoprefixer": {
+      browsers: ['> 1%', 'last 2 version'],
+      cascade: false
+    },
+    "doiuse": {
+      browsers: ['> 1%', 'last 2 version']
+    }
+  }
+}

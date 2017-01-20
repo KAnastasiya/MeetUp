@@ -1,0 +1,80 @@
+.speaker {
+  color: #fefefe;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+
+  &__name {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 43px;
+    margin: 0 0 25px;
+    position: relative;
+
+    &::before {
+      @include size(85px, 5px);
+
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+    }
+  }
+
+  &__topic {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__contacts {
+    font-size: 0;
+  }
+
+  &__contacts-item {
+    display: inline-block;
+    vertical-align: top;
+
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+  }
+
+  &__contacts-link {
+    @include square(30px);
+
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &::before {
+      @include absolute-centered();
+      @include square(inherit);
+
+      content: '';
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__contacts-link--facebook::before {
+    background-image: url('../speaker/img/facebook.svg');
+  }
+
+  &__contacts-link--twitter::before {
+    background-image: url('../speaker/img/twitter.svg');
+  }
+
+  &__contacts-link--behance::before {
+    background-image: url('../speaker/img/behance.svg');
+  }
+
+  &__contacts-link--dribble::before {
+    background-image: url('../speaker/img/dribble.svg');
+  }
+}

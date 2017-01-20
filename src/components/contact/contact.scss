@@ -1,0 +1,59 @@
+@import '../../common/common';
+
+.contact {
+  &__container {
+    height: 660px;
+    position: relative;
+  }
+
+  &__map {
+    height: inherit;
+    z-index: -1;
+  }
+
+  &__overlay {
+    @include size(100%, inherit);
+
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+  }
+
+  &__content {
+    @include absolute-centered();
+
+    display: flex;
+    justify-content: space-between;
+    width: 970px;
+    padding: 60px 70px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(35, 31, 32, 0.65);
+  }
+
+  &__info {
+    flex: 1 1 50%;
+    padding: 35px 90px 0 0;
+    text-align: center;
+  }
+
+  &__img {
+    @include size(130px, 140px);
+
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    color: #454444;
+    font-size: 18px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .link {
+    margin-top: 25px;
+  }
+}
+
+.form--contact {
+  flex: 1 1 390px;
+}

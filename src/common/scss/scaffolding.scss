@@ -1,0 +1,101 @@
+@import '../common';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 300 $font-size--basic Roboto;
+  color: $font-color--main;
+
+  &.in-transition {
+    transition: transform 1000ms ease;
+  }
+}
+
+ul {
+  font-size: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 0 0 15px;
+}
+
+h3 {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0 0 20px;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+p {
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: $continer-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container--column {
+  flex-direction: column;
+}
+
+.link {
+  font-size: 22px;
+  font-weight: 400;
+  color: $font-color--light;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 15px;
+  display: inline-block;
+  min-width: 200px;
+  max-width: 25%;
+  padding: 15px 20px;
+  margin-top: 40px;
+
+  &--primary {
+    background-color: $akcent-color;
+  }
+
+  &--additional {
+    background-color: $additional-color;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:focus,
+  &:active {
+    opacity: 0.7;
+  }
+}

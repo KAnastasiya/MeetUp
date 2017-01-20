@@ -1,0 +1,21 @@
+@import '../../common/common';
+
+.event-details {
+  margin: 140px 0 155px;
+  text-align: center;
+
+  &__item {
+    width: 300px;
+    padding: 0 10px;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  &__img {
+    @include size(200px, 210px);
+
+    margin-bottom: 35px;
+  }
+}

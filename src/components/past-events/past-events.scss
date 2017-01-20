@@ -1,0 +1,51 @@
+@import '../../common/common';
+
+.past-events {
+  padding: 155px 0 95px;
+
+  .container {
+    max-width: $speaker-continer-width;
+  }
+
+  &__text {
+    width: 600px;
+    margin-top: 5px;
+  }
+
+  &__list {
+    width: 1170px;
+    margin: 105px auto 55px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item-1 {
+    @include size(600px, 415px);
+
+    background-color: $event1-bg;
+  }
+
+  &__item-2 {
+    @include size(570px, 415px);
+
+    background-color: $event2-bg;
+  }
+
+  &__item-3 {
+    @include size(500px, 370px);
+
+    background-color: $event3-bg;
+  }
+
+  &__item-4 {
+    @include size(670px, 370px);
+
+    background-color: $event4-bg;
+  }
+
+  .link {
+    margin-left: auto;
+    margin-right: @margin-left;
+  }
+}

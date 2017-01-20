@@ -1,0 +1,11 @@
+a#sponsors
+.sponsors__container
+  .container
+    .sponsors__content
+      h2.sponsors__title Sponsor Our Event!
+      p.sponsors__text If you want to help us making this event lively and successful, help us by sponsoring our event! This will help us bring in more people, have better livestreaming equipment, maybe even our own chef! You can also sponsor us by giving away free swag at the event!<br><br>Here’s who have sponsored us already:
+      ul.sponsors__list
+        each item in items
+          li(class='sponsors__item sponsors__item--' + item.name)
+            img(src=item.src, alt='').sponsors__img
+      a(href='#').link.link--primary Sponsor Us

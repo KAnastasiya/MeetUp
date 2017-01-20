@@ -1,0 +1,12 @@
+@import '../../common/common';
+
+.header {
+  width: 100%;
+  transform: skewY(5deg);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

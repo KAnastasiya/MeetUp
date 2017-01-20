@@ -1,0 +1,32 @@
+a#contact
+.contact__container
+  div(onClick='style.pointerEvents="none"').contact__overlay
+  iframe(
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21138.736577685515!2d35.02216075!3d48.52667585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1482490998618",
+    width="1900",
+    height="1000",
+    frameborder="0",
+    style="border:0",
+    allowfullscreen>
+  ).contact__map
+
+  .contact__content
+    .contact__info
+      img(
+        src='img/contacts-badge.png',
+        alt=''
+      ).contact__img
+      p.contact__text Lorem Ipsum Avenue, 420/2 elm street, Melbourne, Sydney - 2122, Kingdom of Australia
+      a(
+        href='https://goo.gl/maps/oSJr6ouXch92',
+        target='_black'
+      ).link.link--primary View Map
+    form.form.form--contact
+      input(
+        type='email',
+        placeholder='Type your email'
+      ).input
+      textarea(
+        placeholder='Type your message'
+      ).textarea
+      button(type='submit').btn.btn--additional Send Message

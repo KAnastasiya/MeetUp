@@ -1,0 +1,23 @@
+@import '../../common/common';
+
+.welcome {
+  &__info {
+    height: 780px;
+    padding-top: 115px;
+    background-color: $bg-color--dark;
+    transform: skewY($bg-skew) translateY(-70px);
+    position: relative;
+
+    &::after {
+      @extend .unskew-bg;
+
+      content: '';
+      width: 100%;
+      height: 210px;
+      background: url(img/bg.png) no-repeat 185px 100%;
+      background-size: contain;
+      position: absolute;
+      bottom: -60px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import '../common';
+
+.input,
+.textarea {
+  @include placeholder($font-color-placeholder);
+
+  font-size: 22px;
+  color: $font-color-tips;
+  border: 1px solid $font-color-placeholder;
+  border-radius: 5px;
+  padding: 15px 10px;
+  margin-bottom: 18px;
+
+  &:focus {
+    outline: none;
+
+    &:not(:invalid) {
+      border: 1px solid $akcent-color;
+      box-shadow: 0 0 3px $akcent-color;
+    }
+
+    &:invalid {
+      box-shadow: 0 0 2px $error-color;
+    }
+  }
+
+  &:invalid {
+    border: 1px solid $error-color;
+  }
+}
+
+.input {
+  @include size(100%, 55px);
+}
+
+.textarea {
+  @include size(100%, 260px);
+
+  resize: none;
+}
+
+.btn {
+  @include size(100%, 55px);
+
+  font-size: 22px;
+  font-weight: 400;
+  color: $font-color--light;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $akcent-color;
+  }
+
+  &--additional {
+    background-color: $additional-color;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 5px #999;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.form {
+  &__title {
+    text-align: center;
+  }
+
+  &__tips {
+    font-size: 15px;
+    color: $font-color-tips;
+    text-align: center;
+    margin-top: 15px;
+  }
+}

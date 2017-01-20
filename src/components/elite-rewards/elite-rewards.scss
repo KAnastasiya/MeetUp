@@ -1,0 +1,35 @@
+@import '../../common/common';
+
+.elite-rewards {
+  @extend .skew-bg;
+
+  color: #fff;
+
+  &__info {
+    @extend .unskew-bg;
+
+    width: 665px;
+    padding: 115px 0 100px;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  &__text {
+    padding-top: 10px;
+  }
+
+  &__badge {
+    @extend .unskew-bg;
+
+    width: 355px;
+    height: 355px;
+    background: url(img/elite-badge.png) no-repeat center;
+    position: absolute;
+    top: -165px;
+    left: -10px;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+}

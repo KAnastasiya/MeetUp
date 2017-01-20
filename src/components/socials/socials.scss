@@ -1,0 +1,63 @@
+@import '../../common/common';
+
+.socials {
+  background-color: $akcent-color;
+  margin: 20px 0 30px;
+  text-align: center;
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    @include square(45px);
+
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &::before {
+      @include square(inherit);
+      @include absolute-centered();
+
+      content: '';
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &__link--facebook::before {
+    background-image: url(img/facebook.svg);
+  }
+
+  &__link--google::before {
+    background-image: url(img/google.svg);
+  }
+
+  &__link--linked-in::before {
+    background-image: url(img/linked-in.svg);
+  }
+
+  &__link--tumblr::before {
+    background-image: url(img/tumblr.svg);
+  }
+
+  &__link--twitter::before {
+    background-image: url(img/twitter.svg);
+  }
+}

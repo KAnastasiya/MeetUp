@@ -1,0 +1,33 @@
+@import '../../common/common';
+
+.navigations {
+  flex: 1 1 auto;
+  text-align: right;
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+
+    &:not(:last-of-type) {
+      padding-right: 42px;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 72px;
+    padding-top: 10px;
+    padding-bottom: @padding-top;
+  }
+
+  &__link--active {
+    color: $akcent-color;
+  }
+}

@@ -1,0 +1,84 @@
+@import '../../common/common';
+
+.event-schedule {
+  color: #fff;
+  margin-bottom: 220px;
+
+  &__table {
+    display: table;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__header {
+    display: table-header-group;
+  }
+
+  &__body {
+    display: table-row-group;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__cell {
+    display: table-cell;
+
+    &:not(.event-schedule__cell--time) {
+      padding-left: 75px;
+    }
+  }
+
+  &__cell--title {
+    font-size: 30px;
+    font-weight: 900;
+    background-color: $table-header-bg;
+    padding-top: 20px;
+    padding-bottom: @padding-top;
+
+    &:first-of-type {
+      border-top-left-radius: 15px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 15px;
+    }
+  }
+
+  &__cell--text {
+    font-size: 22px;
+    font-weight: 400;
+    background-color: $table-body-bg;
+    padding-top: 25px;
+    padding-bottom: @padding-top;
+  }
+
+  &__row--body {
+    &:nth-of-type(even) .event-schedule__cell--text {
+      background-color: $table-even-items-bg;
+    }
+
+    &:last-of-type .event-schedule__cell--text {
+      &:first-of-type {
+        border-bottom-left-radius: 15px;
+      }
+
+      &:last-of-type {
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+
+  .event-schedule__cell--time {
+    text-align: center;
+    width: 220px;
+    padding-left: 30px;
+    padding-right: @padding-left;
+  }
+
+  &__tips {
+    width: 850px;
+    text-align: center;
+  }
+}

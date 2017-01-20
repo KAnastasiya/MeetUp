@@ -1,0 +1,13 @@
+- for (var i = 0; i < items.length; i++)
+  if i === 4
+    .speakers__item.speakers__logo
+  else
+    div(class='speakers__item speaker speaker--' + i)
+      .speaker__info
+        h3.speaker__name= items[i].name
+        p.speaker__topic= items[i].topic
+      ul.speaker__contacts
+        - var contacts = items[i].contacts
+        - for (var j = 0; j < contacts.length; j++)
+          li.speaker__contacts-item
+            a(href='#', class='speaker__contacts-link speaker__contacts-link--' + contacts[j].type)
