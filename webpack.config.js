@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const outputDir = path.resolve(__dirname, './');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './main',
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: outputDir,
     filename: '[name].js',
   },
 
@@ -69,7 +70,7 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: outputDir,
     historyApiFallback: true,
   },
 };
