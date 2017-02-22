@@ -5,8 +5,9 @@
   text-align: center;
 
   &__item {
-    width: 300px;
-    padding: 0 10px;
+    width: 33%;
+    max-width: 300px;
+    padding: 0 (10px / $container-width * 100%);
     list-style: none;
     display: inline-block;
     vertical-align: top;
@@ -17,5 +18,9 @@
     @include size(200px, 210px);
 
     margin-bottom: 35px;
+  }
+
+  &__text {
+    font-size: 14px;
   }
 }

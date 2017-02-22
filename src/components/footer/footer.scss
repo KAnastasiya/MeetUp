@@ -31,6 +31,10 @@
   bottom: 80px;
   right: @bottom * 2;
 
+  @media screen and (max-width: 850px) {
+    right: @bottom;
+  }
+
   &::before {
     @include square(20px);
 

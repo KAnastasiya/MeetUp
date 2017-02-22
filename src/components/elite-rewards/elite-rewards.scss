@@ -22,11 +22,18 @@
     @extend .unskew-bg;
 
     width: 355px;
-    height: 355px;
+    height: @width;
     background: url(img/elite-badge.png) no-repeat center;
+    background-size: cover;
     position: absolute;
     top: -165px;
     left: -10px;
+
+    @media screen and (max-width: 850px) {
+      width: 250px;
+      top: -125px;
+      left: 10px;
+    }
   }
 
   .link {

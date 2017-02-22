@@ -9,7 +9,7 @@
     vertical-align: top;
 
     &:not(:last-of-type) {
-      padding-right: 42px;
+      padding-right: (40px / $container-width ) * 100%;
     }
   }
 
@@ -22,7 +22,6 @@
     white-space: nowrap;
     display: inline-block;
     vertical-align: top;
-    min-width: 72px;
     padding-top: 10px;
     padding-bottom: @padding-top;
   }

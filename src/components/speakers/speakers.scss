@@ -4,7 +4,7 @@
   padding: 200px 0;
 
   .container {
-    max-width: $speaker-continer-width;
+    max-width: 980px;
   }
 
   &__text {
@@ -13,15 +13,16 @@
   }
 
   &__list {
-    width: $speaker-continer-width;
+    width: 980px;
     margin: 60px auto 0;
     display: flex;
     flex-wrap: wrap;
   }
 
   &__item {
-    @include square(298px);
-
+    width: 30%;
+    max-width: 298px;
+    height: @max-width;
     border-radius: 15px;
     background-color: $akcent-color;
     padding: 35px 35px 25px;

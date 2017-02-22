@@ -1,6 +1,8 @@
 @import '../../common/common';
 
 .timer {
+  width: 100%;
+  max-width: 1000px;
   padding: 115px 0;
   margin: 0 auto;
   transform: skewY(5deg);
@@ -11,31 +13,22 @@
     text-transform: uppercase;
     border-radius: 20px;
     border: 2px solid $akcent-color;
-    padding: 10px 80px 20px;
+    padding: 10px 0 20px;
     display: flex;
+    justify-content: space-around;
   }
 
   &__block {
+    flex: 1 1 25%;
     text-align: center;
-    display: inline-block;
-    vertical-align: top;
     position: relative;
 
-    &:not(:last-of-type) {
-      width: 220px;
-      padding-right: 85px;
-
-      &::after {
-        content: ':';
-        font-size: 80px;
-        position: absolute;
-        top: 30px;
-        right: 40px;
-      }
-    }
-
-    &:last-of-type {
-      width: 135px;
+    &:not(:last-of-type)::after {
+      content: ':';
+      font-size: 80px;
+      position: absolute;
+      top: 30px;
+      right: 0;
     }
   }
 

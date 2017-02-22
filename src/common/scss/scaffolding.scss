@@ -11,12 +11,26 @@ body {
 }
 
 body {
-  font: 300 $font-size--basic Roboto;
+  font: 300 14px Roboto;
   color: $font-color--main;
+  overflow-x: hidden;
 
   &.in-transition {
     transition: transform 1000ms ease;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: (20px / $container-width ) * 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container--column {
+  flex-direction: column;
 }
 
 ul {
@@ -47,25 +61,13 @@ h4 {
 }
 
 p {
-  line-height: 1.2;
+  line-height: 1.4;
   padding: 0;
   margin: 0;
 }
 
 strong {
   font-weight: 500;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  max-width: $continer-width;
-  margin: 0 auto;
-  position: relative;
-}
-
-.container--column {
-  flex-direction: column;
 }
 
 .link {
