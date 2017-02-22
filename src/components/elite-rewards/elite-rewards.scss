@@ -10,6 +10,11 @@
     padding: 115px 0 100px;
     margin-left: auto;
     text-align: right;
+
+    @media screen and (max-width: $tablet-middle) {
+      width: 100%;
+      padding: 60px 0;
+    }
   }
 
   &__text {
@@ -29,6 +34,10 @@
       @include square(280px);
       top: -125px;
       left: 10px;
+    }
+
+    @media screen and (max-width: $tablet-middle) {
+      display: none;
     }
   }
 

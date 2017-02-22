@@ -17,6 +17,14 @@
       background-size: contain;
       position: absolute;
       bottom: (-40px / $container-width) * 100%;
+
+      @media screen and (max-width: $tablet-middle) {
+        height: 140px;
+      }
+    }
+
+    @media screen and (max-width: $tablet-middle) {
+      height: 560px;
     }
   }
 }

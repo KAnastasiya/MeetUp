@@ -6,6 +6,13 @@
   position: absolute;
   bottom: 0;
   right: 0;
+
+  @media screen and (max-width: $tablet-middle) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 40px 0;
+  }
 }
 
 .form--sign-up {

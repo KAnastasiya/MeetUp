@@ -6,6 +6,11 @@
   margin: 0 auto;
   transform: skewY(5deg);
 
+  @media screen and (max-width: $tablet-middle) {
+    padding-top: 50px;
+    padding-bottom: @padding-top;
+  }
+
   &__content {
     color: #fff;
     font-family: 'Roboto Slab';
@@ -26,8 +31,13 @@
       content: ':';
       font-size: (80px / $font-size) * 1rem;
       position: absolute;
-      top: 30px;
+      top: 10px;
       right: 0;
+
+      @media screen and (max-width: $tablet-middle) {
+        font-size: (30px / $font-size) * 1rem;
+        top: 20px;
+      }
     }
   }
 
@@ -36,10 +46,18 @@
     font-weight: 100;
     line-height: 1;
     margin-bottom: 10px;
+
+    @media screen and (max-width: $tablet-middle) {
+      font-size: (50px / $font-size) * 1rem;
+    }
   }
 
   &__tips {
     font-size: (20px / $font-size) * 1rem;
     font-weight: 400;
+
+    @media screen and (max-width: $tablet-middle) {
+      font-size: (12px / $font-size) * 1rem;
+    }
   }
 }

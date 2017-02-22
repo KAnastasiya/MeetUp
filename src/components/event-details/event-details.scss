@@ -4,6 +4,10 @@
   margin: 120px 0;
   text-align: center;
 
+  @media screen and (max-width: $tablet-middle) {
+    margin: 60px 0 100px;
+  }
+
   &__item {
     width: 33%;
     max-width: 350px;
@@ -12,6 +16,14 @@
     display: inline-block;
     vertical-align: top;
     text-align: center;
+
+    @media screen and (max-width: $tablet-middle) {
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 60px;
+      }
+    }
   }
 
   &__img {

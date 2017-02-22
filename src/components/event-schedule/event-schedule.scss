@@ -4,6 +4,10 @@
   color: #fff;
   margin-bottom: 220px;
 
+  @media screen and (max-width: $tablet-middle) {
+    margin-bottom: 100px;
+  }
+
   &__table {
     display: table;
     width: 100%;
