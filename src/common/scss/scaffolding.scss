@@ -23,8 +23,9 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  width: 95%;
-  padding: (20px / $container-width ) * 100%;
+  width: 90%;
+  max-width: $container-width;
+  padding: (20px / $container-width) * 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -43,19 +44,19 @@ li {
 }
 
 h2 {
-  font-size: (50px / $font-size) * 1rem;
+  font-size: (40px / $font-size) * 1rem;
   font-weight: 900;
   margin: 0 0 15px;
 }
 
 h3 {
-  font-size: (35px / $font-size) * 1rem;
+  font-size: (30px / $font-size) * 1rem;
   font-weight: 900;
   margin: 0 0 20px;
 }
 
 h4 {
-  font-size: (30px / $font-size) * 1rem;
+  font-size: (28px / $font-size) * 1rem;
   font-weight: 700;
   margin: 0 0 20px;
 }
@@ -78,7 +79,7 @@ img {
 }
 
 .link {
-  font-size: (22px / $font-size) * 1rem;
+  font-size: (18px / $font-size) * 1rem;
   font-weight: 400;
   color: $font-color--light;
   white-space: nowrap;

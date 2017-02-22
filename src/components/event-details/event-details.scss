@@ -1,12 +1,12 @@
 @import '../../common/common';
 
 .event-details {
-  margin: 140px 0 155px;
+  margin: 120px 0;
   text-align: center;
 
   &__item {
     width: 33%;
-    max-width: 300px;
+    max-width: 350px;
     padding: 0 (10px / $container-width * 100%);
     list-style: none;
     display: inline-block;

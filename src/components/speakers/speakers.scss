@@ -1,7 +1,7 @@
 @import '../../common/common';
 
 .speakers {
-  padding: 200px 0;
+  padding: 140px 0;
 
   &__text {
     max-width: 580px;
@@ -11,20 +11,23 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 60px auto 0;
   }
 
   &__item {
     width: 30%;
-    max-width: 298px;
-    height: @max-width;
+    max-width: 395px;
+    min-height: @width;
+    max-height: @max-width;
     border-radius: 15px;
     background-color: $akcent-color;
     padding: 35px (35px / $container-width * 100%) 25px;
+    margin-right: (40px / $container-width) * 100%;
+    margin-bottom: @margin-right;
 
-    &:not(:nth-of-type(3n+3)) {
-      margin-right: (40px / $container-width) * 100%;
-      margin-bottom: @margin-right;
+    &:nth-of-type(3n+3) {
+      margin-right: 0;
     }
   }
 
