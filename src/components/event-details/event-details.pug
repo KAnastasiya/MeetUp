@@ -1,5 +1,6 @@
 each item in items
   li.event-details__item
-    img(src=item.img, alt='').event-details__img
+    .event-details__img
+      img(src=item.img, alt='')
     h3.event-details__title= item.title
     p.event-details__text= item.text

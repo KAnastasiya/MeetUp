@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  font: 300 14px Roboto;
+  font: 300 $font-size Roboto;
   color: $font-color--main;
   overflow-x: hidden;
 
@@ -23,7 +23,7 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 95%;
   padding: (20px / $container-width ) * 100%;
   margin: 0 auto;
   position: relative;
@@ -43,19 +43,19 @@ li {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: (50px / $font-size) * 1rem;
   font-weight: 900;
   margin: 0 0 15px;
 }
 
 h3 {
-  font-size: 35px;
+  font-size: (35px / $font-size) * 1rem;
   font-weight: 900;
   margin: 0 0 20px;
 }
 
 h4 {
-  font-size: 30px;
+  font-size: (30px / $font-size) * 1rem;
   font-weight: 700;
   margin: 0 0 20px;
 }
@@ -70,8 +70,15 @@ strong {
   font-weight: 500;
 }
 
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .link {
-  font-size: 22px;
+  font-size: (22px / $font-size) * 1rem;
   font-weight: 400;
   color: $font-color--light;
   white-space: nowrap;

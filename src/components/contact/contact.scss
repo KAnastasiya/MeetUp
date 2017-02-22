@@ -13,14 +13,12 @@
 
   &__overlay {
     @include size(100%, inherit);
-
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
   }
 
   &__content {
     @include absolute-centered();
-
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -30,7 +28,7 @@
     background-color: #fff;
     box-shadow: 0 1px 2px rgba(35, 31, 32, 0.65);
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: $tablet-max) {
       padding-left: 40px;
       padding-right: @padding-left;
     }
@@ -44,13 +42,12 @@
 
   &__img {
     @include size(130px, 140px);
-
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
   }
 
   &__text {
     color: #454444;
-    font-size: 18px;
+    font-size: (18px / $font-size) * 1rem;
     width: 300px;
     margin: 0 auto;
   }

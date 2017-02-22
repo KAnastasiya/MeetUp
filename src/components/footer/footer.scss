@@ -14,7 +14,7 @@
 
   &__text {
     color: #fff;
-    font-size: 18px;
+    font-size: (18px / $font-size) * 1rem;
     font-weight: 300;
     text-align: center;
     width: 377px;
@@ -24,20 +24,18 @@
 
 .link--to-top {
   @include square(40px);
-
   display: none;
   vertical-align: top;
   position: fixed;
   bottom: 80px;
   right: @bottom * 2;
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: $tablet-max) {
     right: @bottom;
   }
 
   &::before {
     @include square(20px);
-
     content: '';
     border-width: 6px;
     border-left: @border-width solid #212121;

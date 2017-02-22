@@ -7,7 +7,8 @@
   &__table {
     display: table;
     width: 100%;
-    margin-bottom: 40px;
+    max-width: $container-width;
+    margin: 0 auto 40px;
   }
 
   &__header {
@@ -25,6 +26,7 @@
   &__cell {
     display: table-cell;
     padding: 0 (30px / $container-width * 100%);
+    vertical-align: middle;
   }
 
   &__row--body {
@@ -44,7 +46,7 @@
   }
 
   &__cell--title {
-    font-size: 30px;
+    font-size: (30px / $font-size) * 1rem;
     font-weight: 900;
     background-color: $table-header-bg;
     padding-top: 20px;
@@ -65,18 +67,15 @@
   }
 
   &__cell--text {
-    font-size: 22px;
+    font-size: (22px / $font-size) * 1rem;
     font-weight: 400;
     background-color: $table-body-bg;
     padding-top: 25px;
     padding-bottom: @padding-top;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   &__tips {
-    width: 850px;
+    color: $font-color--main;
     text-align: center;
   }
 }

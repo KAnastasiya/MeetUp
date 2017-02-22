@@ -3,8 +3,7 @@
 .input,
 .textarea {
   @include placeholder($font-color-placeholder);
-
-  font-size: 22px;
+  font-size: (22px / $font-size) * 1rem;
   color: $font-color-tips;
   border: 1px solid $font-color-placeholder;
   border-radius: 5px;
@@ -35,14 +34,12 @@
 
 .textarea {
   @include size(100%, 260px);
-
   resize: none;
 }
 
 .btn {
   @include size(100%, 55px);
-
-  font-size: 22px;
+  font-size: (22px / $font-size) * 1rem;
   font-weight: 400;
   color: $font-color--light;
   border: none;
@@ -77,7 +74,7 @@
   }
 
   &__tips {
-    font-size: 15px;
+    font-size: (15px / $font-size) * 1rem;
     color: $font-color-tips;
     text-align: center;
     margin-top: 15px;

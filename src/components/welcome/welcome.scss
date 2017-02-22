@@ -10,7 +10,6 @@
 
     &::after {
       @extend .unskew-bg;
-
       content: '';
       width: 100%;
       height: 210px;

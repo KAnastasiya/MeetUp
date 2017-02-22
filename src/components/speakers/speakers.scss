@@ -3,20 +3,15 @@
 .speakers {
   padding: 200px 0;
 
-  .container {
-    max-width: 980px;
-  }
-
   &__text {
-    width: 580px;
+    max-width: 580px;
     margin-top: 5px;
   }
 
   &__list {
-    width: 980px;
-    margin: 60px auto 0;
     display: flex;
     flex-wrap: wrap;
+    margin: 60px auto 0;
   }
 
   &__item {
@@ -25,16 +20,17 @@
     height: @max-width;
     border-radius: 15px;
     background-color: $akcent-color;
-    padding: 35px 35px 25px;
-    margin-bottom: 40px;
+    padding: 35px (35px / $container-width * 100%) 25px;
 
     &:not(:nth-of-type(3n+3)) {
-      margin-right: 40px;
+      margin-right: (40px / $container-width) * 100%;
+      margin-bottom: @margin-right;
     }
   }
 
   &__logo {
     background: #fff url(img/speakers-logo.png) no-repeat center;
+    background-size: contain;
   }
 }
 

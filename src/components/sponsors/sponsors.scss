@@ -3,15 +3,13 @@
 .sponsors {
   &__container {
     @extend .skew-bg;
-
     color: #fff;
     padding: 100px 0 70px;
   }
 
   &__content {
     @extend .unskew-bg;
-
-    width: 625px;
+    width: (700px / $container-width) * 100%;
     margin: 0 auto;
     text-align: center;
   }
@@ -22,16 +20,17 @@
 
   &__list {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    max-width: 650px;
     margin: 50px auto 25px;
   }
 
   &__item {
-    display: inline-block;
-    vertical-align: top;
+    @include size(180px, 75px);
 
     &:not(:last-of-type) {
-      margin-right: 90px;
+      margin-right: (90px / $container-width) * 100%;
     }
   }
 }

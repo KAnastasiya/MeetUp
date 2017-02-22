@@ -16,7 +16,6 @@
 
   &__link {
     @include square(45px);
-
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -24,7 +23,6 @@
     &::before {
       @include square(inherit);
       @include absolute-centered();
-
       content: '';
       background-repeat: no-repeat;
       background-position: center;

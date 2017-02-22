@@ -3,18 +3,14 @@
 .past-events {
   padding: 155px 0 95px;
 
-  .container {
-    max-width: 980px;
-  }
-
   &__text {
-    width: 600px;
+    max-width: 600px;
     margin-top: 5px;
   }
 
   &__list {
     width: 95%;
-    max-width: 1170px;
+    max-width: $past-event-width;
     margin: 105px auto 55px;
     display: flex;
     flex-wrap: wrap;
@@ -22,26 +18,22 @@
   }
 
   &__item-1 {
-    @include size(55%, 415px);
-
+    @include size(55%, $past-event-height);
     background-color: $event1-bg;
   }
 
   &__item-2 {
-    @include size(45%, 415px);
-
+    @include size(45%, $past-event-height);
     background-color: $event2-bg;
   }
 
   &__item-3 {
-    @include size(40%, 370px);
-
+    @include size(40%, $past-event-height);
     background-color: $event3-bg;
   }
 
   &__item-4 {
-    @include size(60%, 370px);
-
+    @include size(60%, $past-event-height);
     background-color: $event4-bg;
   }
 
