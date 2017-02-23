@@ -4,6 +4,10 @@
   color: #fff;
   margin-bottom: 220px;
 
+  @media screen and (min-width: $tablet-middle) and (max-width: $tablet-max) {
+    margin-bottom: 180px;
+  }
+
   @media screen and (max-width: $tablet-middle) {
     margin-bottom: 100px;
   }
@@ -62,6 +66,10 @@
     &:last-of-type {
       border-top-right-radius: 15px;
     }
+
+    @media screen and (max-width: $tablet-middle) {
+      font-size: (18px / $font-size) * 1rem;
+    }
   }
 
   &__cell--time {
@@ -75,6 +83,10 @@
     background-color: $table-body-bg;
     padding-top: 25px;
     padding-bottom: @padding-top;
+
+    @media screen and (max-width: $tablet-middle) {
+      font-size: (14px / $font-size) * 1rem;
+    }
   }
 
   &__tips {

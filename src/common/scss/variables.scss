@@ -3,6 +3,7 @@ $additional-color:          #373737;
 $error-color:               #e0652a;
 
 $bg-color--dark:            #4b4d4f;
+$bg-color--gray:            #f7f7f7;
 $bg-color--white:           #fff;
 
 $font-color--main:          #242424;
@@ -21,11 +22,14 @@ $event4-bg:                 #e0652a;
 
 $bg-skew:                   -5deg;
 
+$font-size:                 14px;
+
 $container-width:           1030px;
 $sign-up-max-width:         430px;
-
-$font-size:                 14px;
 
 $tablet-min:                480px;
 $tablet-middle:             800px;
 $tablet-max:                900px;
+$mobile-max:                360px;
+
+$menu-icon-size:            30px;

@@ -9,12 +9,20 @@ export default class Header {
     this.elem.className = 'header-content';
     this.elem.innerHTML = template(options);
     this.renderLogo();
+    this.renderMenuIcon();
     this.renderNavigations();
   }
 
   renderLogo() {
     const logo = new Logo();
     this.elem.querySelector('.logo').appendChild(logo.elem);
+  }
+
+  renderMenuIcon() {
+    this.menuIcon = document.createElement('a');
+    this.menuIcon.className = 'navigations__menu-icon';
+    this.elem.querySelector('.navigations').appendChild(this.menuIcon);
+    this.menuIcon.addEventListener('click', this.onMenuIconClick);
   }
 
   renderNavigations() {
@@ -38,5 +46,14 @@ export default class Header {
     });
 
     this.elem.querySelector('.navigations').appendChild(navigations.elem);
+  }
+
+  onMenuIconClick() {
+    const navList = document.querySelector('.navigations__list');
+    if (navList.classList.contains('open')) {
+      navList.classList.remove('open');
+    } else {
+      navList.classList.add('open');
+    }
   }
 }

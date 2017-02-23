@@ -1,7 +1,7 @@
 @import '../../common/common';
 
 .footer {
-  padding: 40px;
+  padding: (40px / $container-width) * 100%;
   background-color: $akcent-color;
 
   .container {
@@ -17,8 +17,12 @@
     font-size: (18px / $font-size) * 1rem;
     font-weight: 300;
     text-align: center;
-    width: 377px;
+    max-width: 380px;
     margin: 0 auto;
+
+    @media screen and (max-width: $mobile-max) {
+      font-size: (14px / $font-size) * 1rem;
+    }
   }
 }
 

@@ -3,8 +3,9 @@
 .speakers {
   padding: 140px 0;
 
-  @media screen and (max-width: $tablet-middle) {
-    padding: 100px 0;
+  @media screen and (max-width: $tablet-max) {
+    padding-top: 100px;
+    padding-bottom: @padding-top;
   }
 
   &__text {
@@ -22,13 +23,11 @@
   &__item {
     width: 30%;
     max-width: 395px;
-    min-height: @width;
-    max-height: @max-width;
     border-radius: 15px;
     background-color: $akcent-color;
     padding: 35px (35px / $container-width * 100%) 25px;
-    margin-right: (40px / $container-width) * 100%;
-    margin-bottom: @margin-right;
+    margin-bottom: 20px;
+    margin-right: @margin-bottom;
 
     &:nth-of-type(3n+3) {
       margin-right: 0;
@@ -38,7 +37,6 @@
       width: 100%;
       max-width: 100%;
       margin-right: 0;
-      margin-bottom: 20px;
     }
   }
 

@@ -3,8 +3,9 @@
 .past-events {
   padding: 140px 0 95px;
 
-  @media screen and (max-width: $tablet-middle) {
-    padding: 100px 0;
+  @media screen and (max-width: $tablet-max) {
+    padding-top: 100px;
+    padding-bottom: @padding-top;
   }
 
   &__text {
@@ -19,15 +20,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media screen and (max-width: $tablet-max) {
+      margin-bottom: 0;
+    }
+
     @media screen and (max-width: $tablet-middle) {
       flex-direction: column;
-      margin-bottom: 0;
     }
   }
 
   &__item {
     height: 415px;
-    margin-bottom: 20px;
+
+    @media screen and (max-width: $tablet-middle) {
+      margin-bottom: 20px;
+    }
   }
 
   &__item-1 {
