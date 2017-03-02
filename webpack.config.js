@@ -51,7 +51,7 @@ module.exports = {
       progressive: true,
     },
     pngquant: {
-      quality: '65-80',
+      quality: '50-65',
       speed: 4,
     },
     svgo: {
