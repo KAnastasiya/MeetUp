@@ -1,15 +1,24 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .welcome {
   &__info {
     height: 780px;
     padding-top: 115px;
     background-color: $bg-color--dark;
-    transform: skewY($bg-skew) translateY(-70px);
     position: relative;
+    transform: skewY($bg-skew) translateY(-70px);
+
+    @media screen and (max-width: $tablet-middle) {
+      height: 480px;
+    }
+
+    @media screen and (max-width: $mobile-max) {
+      height: 430px;
+    }
 
     &::after {
       @extend .unskew-bg;
+
       content: '';
       width: 100%;
       height: 200px;
@@ -27,14 +36,6 @@
         height: 80px;
         bottom: (-25px / $container-width) * 100%;
       }
-    }
-
-    @media screen and (max-width: $tablet-middle) {
-      height: 480px;
-    }
-
-    @media screen and (max-width: $mobile-max) {
-      height: 430px;
     }
   }
 }

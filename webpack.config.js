@@ -1,90 +1,77 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpackMerge = require('webpack-merge');
 
-const outputDir = path.resolve(__dirname, './');
-const NODE_ENV = process.env.NODE_ENV || 'development';
-
-module.exports = {
-  devtool: NODE_ENV === 'development' ? 'inline-source-map' : null,
-
-  context: path.resolve(__dirname, 'src'),
-  entry: './main',
-  output: {
-    path: outputDir,
-    filename: '[name].js',
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.scss', '.pug'],
-  },
-
-  module: {
-    loaders: [{
-      test: /\.pug$/,
-      loader: 'pug',
-    }, {
-      test: /\.scss$/,
-      loader: 'style!css?minimize!sass?resolve url!postcss',
-    }, {
-      test: /\.js$/,
-      loader: 'babel',
-    }, {
-      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-      loaders: [
-        'url?limit=10000&name=img/[name].[ext]?[hash]',
-        'image-webpack',
-      ],
-    }],
-  },
-
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(NODE_ENV),
-    }),
-  ],
-
-  imageWebpackLoader: {
-    mozjpeg: {
-      quality: 65,
-      progressive: true,
-    },
-    pngquant: {
-      quality: '50-65',
-      speed: 4,
-    },
-    svgo: {
-      plugins: [
-        { removeComments: true },
-        { removeMetadata: true },
-        { removeUselessDefs: true },
-        { removeEditorsNSData: true },
-        { removeEmptyAttrs: true },
-        { removeViewBox: true },
-        { convertColor: true },
-      ],
-    },
-  },
-
-  devServer: {
-    host: 'localhost',
-    port: 8080,
-    contentBase: outputDir,
-    historyApiFallback: true,
-  },
+const LOADERS = {
+  babel: require('./webpack/loaders/babel'),
+  pug: require('./webpack/loaders/pug'),
+  css: require('./webpack/loaders/css'),
+  scss: require('./webpack/loaders/scss'),
+  img: require('./webpack/loaders/img'),
+  eslint: require('./webpack/loaders/eslint'),
 };
 
-if (NODE_ENV === 'production') {
-  module.exports.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true,
-        drop_debugger: true,
-        unused: true,
-        collapse_vars: true,
-      },
-    })
-  );
-}
+const PLUGINS = {
+  html: require('./webpack/plugins/Html'),
+  define: require('./webpack/plugins/Define'),
+  extractText: require('./webpack/plugins/ExtractText'),
+  noEmitOnErrors: require('./webpack/plugins/NoEmitOnErrors'),
+  uglifyJS: require('./webpack/plugins/UglifyJs'),
+  styleLint: require('./webpack/plugins/Stylelint'),
+  hotModuleReplacement: require('./webpack/plugins/HotModuleReplacement'),
+  moduleConcatenation: require('./webpack/plugins/ModuleConcatenation'),
+};
+
+const devServer = require('./webpack/devserver');
+const ExtractText = require('extract-text-webpack-plugin');
+
+const PATHS = {
+  source: path.resolve(__dirname, 'src'),
+  build: path.resolve(__dirname, './'),
+};
+
+const NODE_ENV = process.env.NODE_ENV || 'dev';
+
+
+const common = webpackMerge([
+  {
+    context: PATHS.source,
+    entry: {
+      index: './index.js',
+    },
+    output: {
+      path: PATHS.build,
+      filename: '[name].js',
+    },
+  },
+
+  PLUGINS.html(),
+  PLUGINS.define(NODE_ENV),
+  PLUGINS.extractText(ExtractText),
+  PLUGINS.noEmitOnErrors(),
+  PLUGINS.moduleConcatenation(),
+
+  LOADERS.babel(),
+  LOADERS.pug(),
+  LOADERS.css(),
+  LOADERS.scss(ExtractText),
+  LOADERS.img('./img'),
+]);
+
+
+module.exports = () => {
+  if (NODE_ENV === 'prod') {
+    return webpackMerge([
+      common,
+      PLUGINS.uglifyJS(),
+    ]);
+  }
+
+  return webpackMerge([
+    common,
+    { devtool: 'inline-source-map' },
+    devServer(PATHS.build),
+    LOADERS.eslint(),
+    PLUGINS.styleLint(),
+    PLUGINS.hotModuleReplacement(),
+  ]);
+};

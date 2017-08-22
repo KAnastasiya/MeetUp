@@ -125,7 +125,7 @@ document.body.appendChild(contact.elem);
 const footer = new Footer();
 document.body.appendChild(footer.elem);
 
- // Показ и скрытие кнопки 'Вверх'
+// Показ и скрытие кнопки 'Вверх'
 const toTop = document.querySelector('.link--to-top');
 window.addEventListener('scroll', () => {
   if (toTop.classList.contains('fadeIn') && window.pageYOffset < 2300) {

@@ -1,4 +1,4 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .footer {
   padding: (40px / $container-width) * 100%;
@@ -28,11 +28,12 @@
 
 .link--to-top {
   @include square(40px);
+
   display: none;
   vertical-align: top;
   position: fixed;
-  bottom: 80px;
   right: @bottom * 2;
+  bottom: 80px;
 
   @media screen and (max-width: $tablet-max) {
     right: @bottom;
@@ -40,10 +41,11 @@
 
   &::before {
     @include square(20px);
+
     content: '';
     border-width: 6px;
-    border-left: @border-width solid #212121;
     border-top: @border-left;
+    border-left: @border-width solid #212121;
     position: absolute;
     top: 50%;
     right: -50%;

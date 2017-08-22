@@ -1,4 +1,4 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .event-schedule {
   color: #fff;
@@ -55,9 +55,13 @@
   &__cell--title {
     font-size: (24px / $font-size) * 1rem;
     font-weight: 900;
-    background-color: $table-header-bg;
     padding-top: 20px;
     padding-bottom: @padding-top;
+    background-color: $table-header-bg;
+
+    @media screen and (max-width: $tablet-middle) {
+      font-size: (18px / $font-size) * 1rem;
+    }
 
     &:first-of-type {
       border-top-left-radius: 15px;
@@ -65,10 +69,6 @@
 
     &:last-of-type {
       border-top-right-radius: 15px;
-    }
-
-    @media screen and (max-width: $tablet-middle) {
-      font-size: (18px / $font-size) * 1rem;
     }
   }
 
@@ -80,9 +80,9 @@
   &__cell--text {
     font-size: (18px / $font-size) * 1rem;
     font-weight: 400;
-    background-color: $table-body-bg;
     padding-top: 25px;
     padding-bottom: @padding-top;
+    background-color: $table-body-bg;
 
     @media screen and (max-width: $tablet-middle) {
       font-size: (14px / $font-size) * 1rem;
@@ -90,9 +90,9 @@
   }
 
   &__tips {
-    max-width: $container-width;
-    margin: 0 auto;
     color: $font-color--main;
     text-align: center;
+    max-width: $container-width;
+    margin: 0 auto;
   }
 }

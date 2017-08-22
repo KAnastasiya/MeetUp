@@ -1,4 +1,4 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .past-events {
   padding: 140px 0 95px;
@@ -14,11 +14,11 @@
   }
 
   &__list {
-    width: 100%;
-    margin: 55px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
+    margin: 55px auto;
 
     @media screen and (max-width: $tablet-max) {
       margin-bottom: 0;
@@ -74,7 +74,7 @@
   }
 
   .link {
-    margin-left: auto;
     margin-right: @margin-left;
+    margin-left: auto;
   }
 }

@@ -1,8 +1,8 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .event-details {
-  margin: 120px 0;
   text-align: center;
+  margin: 120px 0;
 
   @media screen and (max-width: $tablet-middle) {
     margin: 60px 0 100px;
@@ -13,12 +13,12 @@
   }
 
   &__item {
+    display: inline-block;
+    vertical-align: top;
     width: 33%;
     max-width: 350px;
     padding: 0 (10px / $container-width * 100%);
     list-style: none;
-    display: inline-block;
-    vertical-align: top;
 
     @media screen and (max-width: $tablet-middle) {
       width: 100%;
@@ -32,6 +32,7 @@
 
   &__img {
     @include size(200px, 210px);
+
     margin: 0 auto (80px / $container-width * 100%);
   }
 

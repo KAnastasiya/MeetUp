@@ -13,6 +13,7 @@
 
     &::before {
       @include size(85px, 5px);
+
       content: '';
       background-color: #fff;
       position: absolute;
@@ -43,6 +44,7 @@
 
   &__contacts-link {
     @include square(30px);
+
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -50,6 +52,7 @@
     &::before {
       @include absolute-centered();
       @include square(inherit);
+
       content: '';
       background-repeat: no-repeat;
       background-position: center;

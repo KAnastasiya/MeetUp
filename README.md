@@ -23,7 +23,7 @@ Organization of an informal meeting.
 
 ### Utils
 
-- `npm run lint` - linting JavaScript with [ESLint](http://eslint.org/).
+- `npm run update:packages` - to update all npm-packages from package.json.
 
 ### Demo
 

@@ -1,4 +1,4 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .speakers {
   padding: 140px 0;
@@ -23,19 +23,19 @@
   &__item {
     width: 30%;
     max-width: 395px;
-    border-radius: 15px;
-    background-color: $akcent-color;
     padding: 35px (35px / $container-width * 100%) 25px;
-    margin-bottom: 20px;
+    border-radius: 15px;
     margin-right: @margin-bottom;
-
-    &:nth-of-type(3n+3) {
-      margin-right: 0;
-    }
+    margin-bottom: 20px;
+    background-color: $akcent-color;
 
     @media screen and (max-width: $tablet-middle) {
       width: 100%;
       max-width: 100%;
+      margin-right: 0;
+    }
+
+    &:nth-of-type(3n+3) {
       margin-right: 0;
     }
   }

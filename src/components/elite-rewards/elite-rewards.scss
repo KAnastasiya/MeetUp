@@ -1,15 +1,17 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .elite-rewards {
   @extend .skew-bg;
+
   color: #fff;
 
   &__info {
     @extend .unskew-bg;
+
+    text-align: right;
     width: (665px / $container-width) * 100%;
     padding: 115px 0 100px;
     margin-left: auto;
-    text-align: right;
 
     @media screen and (max-width: $tablet-middle) {
       width: 100%;
@@ -22,8 +24,10 @@
   }
 
   &__badge {
-    @extend .unskew-bg;
     @include square(355px);
+
+    @extend .unskew-bg;
+
     background: url(img/elite-badge.png) no-repeat center;
     background-size: cover;
     position: absolute;
@@ -32,6 +36,7 @@
 
     @media screen and (max-width: $tablet-max) {
       @include square(280px);
+
       top: -125px;
       left: 10px;
     }

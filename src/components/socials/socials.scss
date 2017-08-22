@@ -1,9 +1,9 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .socials {
-  background-color: $akcent-color;
-  margin: 20px 0 30px;
   text-align: center;
+  margin: 20px 0 30px;
+  background-color: $akcent-color;
 
   &__item {
     display: inline-block;
@@ -16,6 +16,7 @@
 
   &__link {
     @include square(45px);
+
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -23,6 +24,7 @@
     &::before {
       @include square(inherit);
       @include absolute-centered();
+
       content: '';
       background-repeat: no-repeat;
       background-position: center;

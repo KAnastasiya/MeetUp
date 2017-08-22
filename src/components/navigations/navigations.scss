@@ -1,53 +1,7 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .navigations {
   flex: 1 1 auto;
-
-  &__list {
-    text-align: right;
-  }
-
-  &__item {
-    display: inline-block;
-    vertical-align: top;
-    padding-right: (40px / $container-width ) * 100%;
-
-    &:last-of-type {
-      padding-right: 0;
-    }
-  }
-
-  &__link {
-    color: #fff;
-    font-size: (15px / $font-size) * 1rem;
-    font-weight: 100;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: top;
-    padding-top: 10px;
-    padding-bottom: @padding-top;
-    position: relative;
-
-    &:hover:not(.navigations__link--active)::after {
-      content: '';
-      width: 100%;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.7);
-      position: absolute;
-      bottom: 8px;
-      left: 0;
-    }
-  }
-
-  &__link--active {
-    color: $akcent-color;
-  }
-
-  &__menu-icon {
-    display: none;
-  }
 
   @media screen and (max-width: $tablet-max) {
     min-width: 100px;
@@ -58,6 +12,7 @@
 
     &__menu-icon {
       @include square($menu-icon-size);
+
       display: block;
       margin: $menu-icon-size / 2 0 $menu-icon-size / 2 auto;
       position: relative;
@@ -65,6 +20,7 @@
 
       &::before {
         @include size($menu-icon-size, 3px);
+
         content: '';
         background-color: #fff;
         box-shadow:
@@ -77,9 +33,9 @@
     }
 
     &__list {
+      text-align: left;
       display: none;
       background-color: rgba(255, 255, 255, 0.7);
-      text-align: left;
 
       &.open {
         display: block;
@@ -118,5 +74,51 @@
       top: 0;
       left: -15px;
     }
+  }
+
+  &__list {
+    text-align: right;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: (40px / $container-width ) * 100%;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-size: (15px / $font-size) * 1rem;
+    font-weight: 100;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-bottom: @padding-top;
+    position: relative;
+
+    &:hover:not(.navigations__link--active)::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.7);
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+    }
+  }
+
+  &__link--active {
+    color: $akcent-color;
+  }
+
+  &__menu-icon {
+    display: none;
   }
 }

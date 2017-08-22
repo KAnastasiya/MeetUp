@@ -1,4 +1,4 @@
-@import '../../common/common';
+@import '../../common/scss/common';
 
 .contact {
   @media screen and (max-width: $tablet-middle) {
@@ -25,6 +25,7 @@
 
   &__overlay {
     @include size(100%, inherit);
+
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
 
@@ -35,6 +36,7 @@
 
   &__content {
     @include absolute-centered();
+
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -45,38 +47,39 @@
     box-shadow: 0 1px 2px rgba(35, 31, 32, 0.65);
 
     @media screen and (max-width: $tablet-middle) {
+      flex-direction: column;
       background-color: $bg-color--gray;
       position: relative;
       top: initial;
       left: initial;
       transform: initial;
-      flex-direction: column;
     }
   }
 
   &__info {
+    text-align: center;
     flex: 0 0 40%;
     padding: 35px 35px 0 0;
-    text-align: center;
 
     @media screen and (max-width: $tablet-middle) {
-      padding: 0;
       flex: none;
+      padding: 0;
     }
   }
 
   &__img {
     @include size(130px, 140px);
+
     margin: 0 auto 40px;
   }
 
   &__text {
     color: #454444;
     font-size: (16px / $font-size) * 1rem;
+    text-align: center;
     width: 70%;
     min-width: 230px;
     margin: 0 auto;
-    text-align: center;
   }
 
   .link {
@@ -89,8 +92,8 @@
   max-width: 390px;
 
   @media screen and (max-width: $tablet-middle) {
-    margin-top: 40px;
-    max-width: 100%;
     flex: none;
+    max-width: 100%;
+    margin-top: 40px;
   }
 }
