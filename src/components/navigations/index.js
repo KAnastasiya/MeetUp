@@ -4,22 +4,45 @@ import { getCurrentScrollPosition } from '../../common/js/utils';
 
 export default class Navigations {
   constructor(options) {
-    this.elem = document.createElement('ul');
-    this.elem.className = 'navigations__list';
-    this.elem.innerHTML = template(options);
+    this.elem = document.createElement('nav');
+
+    this.renderToggle();
+    this.renderList(options);
+
+    this.onToggleClick = this.onToggleClick.bind(this);
+    this.onItemClick = this.onItemClick.bind(this);
+    this.onPageScroll = this.onPageScroll.bind(this);
+    this.onDocumentClick = this.onDocumentClick.bind(this);
+
+    window.addEventListener('scroll', this.onPageScroll);
+    document.addEventListener('click', this.onDocumentClick);
+  }
+
+  renderToggle() {
+    this.toggleIcon = document.createElement('a');
+    this.toggleIcon.className = 'navigations__menu-icon';
+    this.elem.appendChild(this.toggleIcon);
+    this.toggleIcon.addEventListener('click', this.onToggleClick);
+  }
+
+  renderList(options) {
+    this.list = document.createElement('ul');
+    this.list.className = 'navigations__list';
+    this.list.innerHTML = template(options);
+    this.elem.appendChild(this.list);
 
     this.items = this.getItems();
     this.chooseItem(this.items[0]);
+    this.list.addEventListener('click', this.onItemClick);
+  }
 
-    this.onItemClick = this.onItemClick.bind(this);
-    this.onPageScroll = this.onPageScroll.bind(this);
-
-    this.elem.addEventListener('click', this.onItemClick);
-    window.addEventListener('scroll', this.onPageScroll);
+  hideMenu() {
+    this.list = document.querySelector('.navigations__list');
+    this.list.classList.remove('open');
   }
 
   getItems() {
-    const items = this.elem.querySelectorAll('.navigations__link');
+    const items = this.list.querySelectorAll('.navigations__link');
     const links = [];
     for (let i = 0; i < items.length; i++) {
       links[i] = items[i];
@@ -28,27 +51,30 @@ export default class Navigations {
   }
 
   chooseItem(item) {
-    for (let i = 0; i < this.items.length; i++) {
-      this.items[i].classList.remove('navigations__link--active');
-    }
+    this.items.forEach(elem => elem.classList.remove('navigations__link--active'));
     item.classList.add('navigations__link--active');
 
-    // Обновление адресной строки
-    const hash = item.getAttribute('href').slice(1);
+    const hash = `#${item.getAttribute('href')}`;
     history.replaceState({ page: `${hash}` }, '', `${hash}`);
   }
 
+  onToggleClick() {
+    this.list = document.querySelector('.navigations__list');
+    this.list.classList.toggle('open');
+  }
+
   onItemClick(event) {
-    const body = document.body;
     const element = event.target;
 
     if (element.hasAttribute('href')) {
       event.preventDefault();
 
-      const href = element.getAttribute('href');
-      const targetOffset = (href !== '#event-details') ? document.querySelector(href).offsetTop : 0;
-      const currentPosition = getCurrentScrollPosition();
-      const scrollTranslate = (targetOffset > currentPosition) ? `-${targetOffset - currentPosition}` : (currentPosition - targetOffset);
+      const body = document.body;
+      const position = getCurrentScrollPosition();
+      const href = `#${element.getAttribute('href')}`;
+
+      const targetOffset = document.querySelector(href).offsetTop;
+      const scrollTranslate = targetOffset > position ? `-${targetOffset - position}` : position - targetOffset;
 
       body.classList.add('in-transition');
       body.style.WebkitTransform = `translate(0, ${scrollTranslate}px)`;
@@ -59,51 +85,33 @@ export default class Navigations {
         body.classList.remove('in-transition');
         body.style.cssText = '';
         window.scrollTo(0, targetOffset);
+        this.chooseItem(element);
       }, 900);
-
-      this.chooseItem(element);
     }
   }
 
   onPageScroll() {
-    const currentPosition = getCurrentScrollPosition();
+    this.hideMenu();
 
-    // Get scroll-items
-    const scrollItemsList = this.items.map((link) => {
-      const item = link.getAttribute('href');
-      let scrollItem;
-      if (item !== '#event-details') {
-        scrollItem = item;
+    const scrollItemsList = this.items
+      .map(link => {
+        const item = link.getAttribute('href');
+        return item;
+      })
+      .filter(item => document.querySelector(`#${item}`).offsetTop <= getCurrentScrollPosition());
+
+    const currentItemId = scrollItemsList[scrollItemsList.length - 1] || this.items[0].getAttribute('href');
+    this.items.forEach(item => {
+      if (item.getAttribute('href') === currentItemId) {
+        this.chooseItem(item);
       }
-      return scrollItem;
     });
+  }
 
-    // Get scroll-items state (if 'undefined' - item was not scrolled)
-    const currentScrollItems = scrollItemsList.map((item) => {
-      let temp;
-      if (item && (document.querySelector(item).offsetTop < currentPosition)) {
-        temp = item;
-      }
-      return temp;
-    });
-
-    // Get only scroll-items, that yet was scrolled
-    const onlyScrolledItems = currentScrollItems.filter((item) => {
-      let temp;
-      if (item) {
-        temp = item;
-      }
-      return temp;
-    });
-
-    // Get id of the current scroll-items
-    const currentItemId = onlyScrolledItems[onlyScrolledItems.length - 1] || '#event-details';
-
-    // Choose current scroll-item
-    for (let i = 0; i < this.items.length; i++) {
-      if (this.items[i].getAttribute('href') === currentItemId) {
-        this.chooseItem(this.items[i]);
-      }
+  onDocumentClick(event) {
+    event.stopPropagation();
+    if (!event.target.closest('.navigations')) {
+      this.hideMenu();
     }
   }
 }

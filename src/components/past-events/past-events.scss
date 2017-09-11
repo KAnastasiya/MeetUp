@@ -3,7 +3,7 @@
 .past-events {
   padding: 140px 0 95px;
 
-  @media screen and (max-width: $tablet-max) {
+  @media (max-width: $tablet-max) {
     padding-top: 100px;
     padding-bottom: @padding-top;
   }
@@ -20,11 +20,11 @@
     width: 100%;
     margin: 55px auto;
 
-    @media screen and (max-width: $tablet-max) {
+    @media (max-width: $tablet-max) {
       margin-bottom: 0;
     }
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       flex-direction: column;
     }
   }
@@ -32,7 +32,7 @@
   &__item {
     height: 415px;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       margin-bottom: 20px;
     }
   }
@@ -41,7 +41,7 @@
     width: 55%;
     background-color: $event1-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       width: 100%;
     }
   }
@@ -50,7 +50,7 @@
     width: 45%;
     background-color: $event2-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       width: 100%;
     }
   }
@@ -59,7 +59,7 @@
     width: 40%;
     background-color: $event3-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       width: 100%;
     }
   }
@@ -68,7 +68,7 @@
     width: 60%;
     background-color: $event4-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       width: 100%;
     }
   }

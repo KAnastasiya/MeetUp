@@ -6,7 +6,7 @@
   margin: 0 auto;
   transform: skewY(5deg);
 
-  @media screen and (max-width: $tablet-middle) {
+  @media (max-width: $tablet-middle) {
     padding-top: 50px;
     padding-bottom: @padding-top;
   }
@@ -21,7 +21,7 @@
     border: 2px solid $akcent-color;
     border-radius: 20px;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       padding-bottom: 10px;
     }
   }
@@ -40,12 +40,12 @@
       top: 0;
       right: 0;
 
-      @media screen and (max-width: $tablet-middle) {
+      @media (max-width: $tablet-middle) {
         font-size: (30px / $font-size) * 1rem;
         top: 10px;
       }
 
-      @media screen and (max-width: $mobile-max) {
+      @media (max-width: $mobile-max) {
         font-size: (20px / $font-size) * 1rem;
         top: 5px;
       }
@@ -58,11 +58,11 @@
     line-height: 1;
     margin-bottom: 10px;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       font-size: (50px / $font-size) * 1rem;
     }
 
-    @media screen and (max-width: $mobile-max) {
+    @media (max-width: $mobile-max) {
       font-size: (35px / $font-size) * 1rem;
     }
   }
@@ -71,11 +71,11 @@
     font-size: (20px / $font-size) * 1rem;
     font-weight: 400;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       font-size: (12px / $font-size) * 1rem;
     }
 
-    @media screen and (max-width: $mobile-max) {
+    @media (max-width: $mobile-max) {
       font-size: (10px / $font-size) * 1rem;
     }
   }

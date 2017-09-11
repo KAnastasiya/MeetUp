@@ -3,7 +3,7 @@
 .header {
   transform: skewY(5deg);
 
-  @media screen and (max-width: $tablet-max) {
+  @media (max-width: $tablet-max) {
     z-index: 3;
   }
 }

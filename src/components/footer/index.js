@@ -16,22 +16,28 @@ export default class Footer {
 
   renderSocials() {
     const socials = new Socials({
-      items: [{
-        href: '#',
-        name: 'facebook',
-      }, {
-        href: '#',
-        name: 'twitter',
-      }, {
-        href: '#',
-        name: 'linked-in',
-      }, {
-        href: '#',
-        name: 'google',
-      }, {
-        href: '#',
-        name: 'tumblr',
-      }],
+      items: [
+        {
+          href: '#',
+          name: 'facebook',
+        },
+        {
+          href: '#',
+          name: 'twitter',
+        },
+        {
+          href: '#',
+          name: 'linked-in',
+        },
+        {
+          href: '#',
+          name: 'google',
+        },
+        {
+          href: '#',
+          name: 'tumblr',
+        },
+      ],
     });
 
     this.elem.querySelector('.socials').appendChild(socials.elem);

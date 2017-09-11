@@ -8,11 +8,11 @@
     position: relative;
     transform: skewY($bg-skew) translateY(-70px);
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       height: 480px;
     }
 
-    @media screen and (max-width: $mobile-max) {
+    @media (max-width: $mobile-max) {
       height: 430px;
     }
 
@@ -27,12 +27,12 @@
       position: absolute;
       bottom: (-40px / $container-width) * 100%;
 
-      @media screen and (max-width: $tablet-middle) {
+      @media (max-width: $tablet-middle) {
         height: 120px;
         bottom: (-40px / $container-width) * 100%;
       }
 
-      @media screen and (max-width: $mobile-max) {
+      @media (max-width: $mobile-max) {
         height: 80px;
         bottom: (-25px / $container-width) * 100%;
       }

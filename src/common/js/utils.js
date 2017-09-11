@@ -3,7 +3,7 @@
  * @param  {Date}   endtime Дата и время натсупления события
  * @return {Object}         Количество дней, часов, минут и секунд до натсупления события
  */
-export const getTimeRemaining = (endtime) => {
+export const getTimeRemaining = endtime => {
   const total = endtime.getTime() - Date.now();
   return {
     total,
@@ -14,24 +14,26 @@ export const getTimeRemaining = (endtime) => {
   };
 };
 
-
 /**
  * Подстановка лидирующего нуля для чисел от 1 до 9
  * @param  {String} value Число, которое нужно обработать
  * @return {String}       Обработанное число
  */
-export const setLeadingZero = value => (value < 10) ? `0${value}` : value;
+export const setLeadingZero = value => (value < 10 ? `0${value}` : value);
 
 /**
  * Определяет координаты текущего положения скролла страницы
  * @return {Number}
  */
 export const getCurrentScrollPosition = () => {
+  let position;
   if (window.pageYOffset) {
-    return window.pageYOffset;
+    position = window.pageYOffset;
   } else if (document.documentElement && document.documentElement.scrollTop) {
-    return document.documentElement.scrollTop;
+    position = document.documentElement.scrollTop;
   } else if (document.body) {
-    return document.body.scrollTop;
+    position = document.body.scrollTop;
   }
+
+  return Math.ceil(position);
 };

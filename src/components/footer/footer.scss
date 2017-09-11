@@ -20,7 +20,7 @@
     max-width: 380px;
     margin: 0 auto;
 
-    @media screen and (max-width: $mobile-max) {
+    @media (max-width: $mobile-max) {
       font-size: (14px / $font-size) * 1rem;
     }
   }
@@ -35,7 +35,7 @@
   right: @bottom * 2;
   bottom: 80px;
 
-  @media screen and (max-width: $tablet-max) {
+  @media (max-width: $tablet-max) {
     right: @bottom;
   }
 

@@ -31,7 +31,6 @@ const PATHS = {
 
 const NODE_ENV = process.env.NODE_ENV || 'dev';
 
-
 const common = webpackMerge([
   {
     context: PATHS.source,
@@ -57,13 +56,9 @@ const common = webpackMerge([
   LOADERS.img('./img'),
 ]);
 
-
 module.exports = () => {
   if (NODE_ENV === 'prod') {
-    return webpackMerge([
-      common,
-      PLUGINS.uglifyJS(),
-    ]);
+    return webpackMerge([common, PLUGINS.uglifyJS()]);
   }
 
   return webpackMerge([

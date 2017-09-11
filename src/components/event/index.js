@@ -30,19 +30,26 @@ export default class Event {
 
   renderDetails() {
     const details = new Details({
-      items: [{
-        img: community,
-        title: 'Community',
-        text: 'Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.',
-      }, {
-        img: talkShop,
-        title: 'Talk Shop',
-        text: 'In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.',
-      }, {
-        img: warStories,
-        title: 'War Stories',
-        text: 'Gather round fellow authors! Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.',
-      }],
+      items: [
+        {
+          img: community,
+          title: 'Community',
+          text:
+            'Meet the Community you’ve always talked with, in real life! This meetup will be all about authors engaging each other with interesting coversation and topics. We will have loads of fun.',
+        },
+        {
+          img: talkShop,
+          title: 'Talk Shop',
+          text:
+            'In this meetup you will get to know the marketplaces better, because that’s why were all here for right? Learn a few tips and tricks from experienced authors from all over the country.',
+        },
+        {
+          img: warStories,
+          title: 'War Stories',
+          text:
+            'Gather round fellow authors! Hear the stories of success from your favorite authors and learn how they we able to tackle their problems and become successful.',
+        },
+      ],
     });
 
     this.elem.appendChild(details.elem);
@@ -50,19 +57,24 @@ export default class Event {
 
   renderSchedule() {
     const schedule = new Schedule({
-      items: [{
-        time: '10am - 12pm',
-        text: 'Introduction and presentations about Envato',
-      }, {
-        time: '12pm - 02 pm',
-        text: 'Sessions by honorable guests and Speakers',
-      }, {
-        time: '02pm - 03pm',
-        text: 'Break and Mingle time with the authors',
-      }, {
-        time: '03pm - 05pm',
-        text: 'Portfolio Review, Rewards and Ending Presentation',
-      }],
+      items: [
+        {
+          time: '10am - 12pm',
+          text: 'Introduction and presentations about Envato',
+        },
+        {
+          time: '12pm - 02 pm',
+          text: 'Sessions by honorable guests and Speakers',
+        },
+        {
+          time: '02pm - 03pm',
+          text: 'Break and Mingle time with the authors',
+        },
+        {
+          time: '03pm - 05pm',
+          text: 'Portfolio Review, Rewards and Ending Presentation',
+        },
+      ],
     });
 
     this.elem.appendChild(schedule.elem);

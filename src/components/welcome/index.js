@@ -11,7 +11,9 @@ export default class Welcome {
     this.elem = document.createElement('section');
     this.elem.className = 'welcome';
     this.elem.innerHTML = template(options);
-    this.lastDate = new Date(2017, 2, 31);
+
+    const today = new Date();
+    this.lastDate = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate() + 7);
     this.renderHeader();
 
     const timeInterval = setInterval(() => {

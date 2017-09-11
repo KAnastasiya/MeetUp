@@ -3,36 +3,18 @@
 .navigations {
   flex: 1 1 auto;
 
-  @media screen and (max-width: $tablet-max) {
+  @media (max-width: $tablet-max) {
     min-width: 100px;
     min-height: 100px;
     position: absolute;
     top: 0;
     right: 0;
+  }
 
-    &__menu-icon {
-      @include square($menu-icon-size);
+  &__list {
+    text-align: right;
 
-      display: block;
-      margin: $menu-icon-size / 2 0 $menu-icon-size / 2 auto;
-      position: relative;
-      cursor: pointer;
-
-      &::before {
-        @include size($menu-icon-size, 3px);
-
-        content: '';
-        background-color: #fff;
-        box-shadow:
-          0 ($menu-icon-size / 3) 0 0 @background-color,
-          0 ($menu-icon-size / 3 * 2) 0 0 @background-color;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-
-    &__list {
+    @media (max-width: $tablet-max) {
       text-align: left;
       display: none;
       background-color: rgba(255, 255, 255, 0.7);
@@ -41,8 +23,14 @@
         display: block;
       }
     }
+  }
 
-    &__item {
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: (40px / $container-width) * 100%;
+
+    @media (max-width: $tablet-max) {
       display: block;
       padding: 0 15px;
 
@@ -54,36 +42,6 @@
         background-color: rgba(255, 255, 255, 0.4);
       }
     }
-
-    &__link {
-      color: $additional-color;
-      font-size: (14px / $font-size) * 1rem;
-      font-weight: 500;
-
-      &:hover:not(.navigations__link--active)::after {
-        display: none;
-      }
-    }
-
-    &__link--active::before {
-      content: '';
-      width: 10px;
-      height: 100%;
-      background-color: $akcent-color;
-      position: absolute;
-      top: 0;
-      left: -15px;
-    }
-  }
-
-  &__list {
-    text-align: right;
-  }
-
-  &__item {
-    display: inline-block;
-    vertical-align: top;
-    padding-right: (40px / $container-width ) * 100%;
 
     &:last-of-type {
       padding-right: 0;
@@ -103,6 +61,16 @@
     padding-bottom: @padding-top;
     position: relative;
 
+    @media (max-width: $tablet-max) {
+      color: $additional-color;
+      font-size: (14px / $font-size) * 1rem;
+      font-weight: 500;
+
+      &:hover:not(.navigations__link--active)::after {
+        display: none;
+      }
+    }
+
     &:hover:not(.navigations__link--active)::after {
       content: '';
       width: 100%;
@@ -116,9 +84,41 @@
 
   &__link--active {
     color: $akcent-color;
+
+    @media (max-width: $tablet-max) {
+      &::before {
+        content: '';
+        width: 10px;
+        height: 100%;
+        background-color: $akcent-color;
+        position: absolute;
+        top: 0;
+        left: -15px;
+      }
+    }
   }
 
   &__menu-icon {
     display: none;
+
+    @media (max-width: $tablet-max) {
+      @include square($menu-icon-size);
+
+      display: block;
+      margin: $menu-icon-size / 2 0 $menu-icon-size / 2 auto;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        @include size($menu-icon-size, 3px);
+
+        content: '';
+        background-color: #fff;
+        box-shadow: 0 ($menu-icon-size / 3) 0 0 @background-color, 0 ($menu-icon-size / 3 * 2) 0 0 @background-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 }

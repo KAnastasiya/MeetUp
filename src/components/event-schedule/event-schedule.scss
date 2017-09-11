@@ -4,11 +4,11 @@
   color: #fff;
   margin-bottom: 220px;
 
-  @media screen and (min-width: $tablet-middle) and (max-width: $tablet-max) {
+  @media (min-width: $tablet-middle) and (max-width: $tablet-max) {
     margin-bottom: 180px;
   }
 
-  @media screen and (max-width: $tablet-middle) {
+  @media (max-width: $tablet-middle) {
     margin-bottom: 100px;
   }
 
@@ -59,7 +59,7 @@
     padding-bottom: @padding-top;
     background-color: $table-header-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       font-size: (18px / $font-size) * 1rem;
     }
 
@@ -84,7 +84,7 @@
     padding-bottom: @padding-top;
     background-color: $table-body-bg;
 
-    @media screen and (max-width: $tablet-middle) {
+    @media (max-width: $tablet-middle) {
       font-size: (14px / $font-size) * 1rem;
     }
   }
